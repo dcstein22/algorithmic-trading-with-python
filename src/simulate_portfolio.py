@@ -7,8 +7,9 @@ def simulate_portfolio():
     sharpe_n = 100
 
     # Load in data
-    symbols: List[str] = data_io.get_all_symbols()
+    symbols = data_io.get_all_symbols()
     prices: pd.DataFrame = data_io.load_eod_matrix(symbols)
+    
 
     # Use the Bollinger Band outer band crossover as a signal
     _bollinger = signals.create_bollinger_band_signal
@@ -33,6 +34,9 @@ def simulate_portfolio():
     simulator.portfolio_history.print_summary()
     simulator.portfolio_history.plot()
     simulator.portfolio_history.plot_benchmark_comparison()
+    
+
 
 if __name__ == '__main__':
     simulate_portfolio()
+    

@@ -169,7 +169,7 @@ class PortfolioHistory(object):
     def __init__(self):
         # Keep track of positions, recorded in this list after close
         self.position_history: List[Position] = []
-        self._logged_positions: Set[Position] = set()
+        self._logged_positions = set()
 
         # Keep track of the last seen date
         self.last_date: pd.Timestamp = pd.Timestamp.min
